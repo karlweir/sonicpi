@@ -1,0 +1,23 @@
+# def:ingnor4nt
+
+# Coded by Karl Weir
+
+use_random_seed 56
+
+live_loop :piano do
+  with_fx :reverb, room: rrand(0, 1) do
+    sample :ambi_piano, rate: rrand(-1.5, 1.5), amp: rrand(1.2, 1.5), pan: rrand(-0.8, 0.8)
+    sleep rrand(0.7, 2.5)
+
+  end
+end
+
+live_loop :kit do
+  sample :loop_amen_full, amp: 0.3
+  sleep sample_duration :loop_amen_full
+end
+
+live_loop :hats do
+  sample :drum_cymbal_closed, amp: choose([0.0, 0.2, 0.3, 0.2, 0.2]), pan: choose([-0.8, 0.8]) 
+  sleep 0.10714286
+end

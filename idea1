@@ -1,0 +1,12 @@
+
+define :drone do
+  use_synth :dsaw
+  play choose([30, 33, 37]), amp: 1, release: 0, sustain: 1
+  sleep 1
+end
+
+loop do
+  with_fx :bitcrusher do
+    drone
+  end
+end
