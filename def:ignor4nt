@@ -13,11 +13,14 @@ live_loop :piano do
 end
 
 live_loop :kit do
-  sample :loop_amen_full, amp: 0.3
+  sample :loop_amen_full, amp: 0.3#, rate: 0.5
   sleep sample_duration :loop_amen_full
+  #for half time drums
+  #sleep 13.714285714
+  print sample_duration :loop_amen_full
 end
 
 live_loop :hats do
-  sample :drum_cymbal_closed, amp: choose([0.0, 0.2, 0.3, 0.2, 0.2]), pan: choose([-0.8, 0.8]) 
+  sample :drum_cymbal_closed, amp: choose([0.0, 0.2, 0.3, 0.2, 0.2]), pan: choose([-0.8, 0.8]), finish: 0.3
   sleep 0.10714286
 end
